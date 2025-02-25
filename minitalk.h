@@ -6,7 +6,7 @@
 /*   By: jpflegha <jpflegha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 15:02:18 by jpflegha          #+#    #+#             */
-/*   Updated: 2025/02/25 14:34:24 by jpflegha         ###   ########.fr       */
+/*   Updated: 2025/02/25 18:07:49 by jpflegha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,15 @@ void	end_handler(void);
 
 void	ack_handler(void);
 
-void send_len(pid_t server, size_t len);
+void	send_len(pid_t server, size_t len);
 
 void	send_message(pid_t server, char c);
 
-void handler(int signo, siginfo_t *info, void *more_info);
+void	handler(int signo, siginfo_t *info, void *more_info);
 
 char	*handle_len(int signo, int *phase, pid_t client_pid);
 
-void	handler_messag(int signo, char *str, pid_t client_pid, int *phase);
+int		handler_messag(int signo, char *str, pid_t client_pid, int *phase);
 
 void	my_signal(int signo, void *handler, bool use_sigi);
 

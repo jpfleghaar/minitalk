@@ -6,7 +6,7 @@
 /*   By: jpflegha <jpflegha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 17:57:03 by jpflegha          #+#    #+#             */
-/*   Updated: 2025/02/19 15:24:58 by jpflegha         ###   ########.fr       */
+/*   Updated: 2025/02/25 14:14:30 by jpflegha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	ft_kill(pid_t pid, int signum)
 		write(STDOUT_FILENO, "Signal transmission failed\n", 28);
 		exit(EXIT_FAILURE);
 	}
+	return ;
 }
 
 void	my_signal(int signo, void *handler, bool use_siginfo)
@@ -41,4 +42,24 @@ void	my_signal(int signo, void *handler, bool use_siginfo)
 		write(STDOUT_FILENO, "Signal handler failed\n", 22);
 		exit(EXIT_FAILURE);
 	}
+}
+
+size_t	ft_strlen(const char *s)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
+
+void	ft_putpid(int n)
+{
+	char	c;
+
+	if (n > 9)
+		ft_putpid(n / 10);
+	c = n % 10 + '0';
+	write(STDOUT_FILENO, &c, 1);
 }

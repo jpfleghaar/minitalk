@@ -17,7 +17,7 @@ void	ft_kill(pid_t pid, int signum)
 {
 	if (kill(pid, signum) < 0)
 	{
-		write(STDOUT_FILENO, "Signal transmission failed\n", 28);
+		write(STDOUT_FILENO, "Signal transmission failed\n", 27);
 		exit(EXIT_FAILURE);
 	}
 	return ;

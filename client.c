@@ -77,7 +77,7 @@ int	main(int ac, char **av)
 	i = 0;
 	if (3 != ac || atoi(av[1]) <= 0 || !av[2])
 	{
-		write(STDOUT_FILENO, "Usage: [server_pid] [message]\n", 31);
+		write(STDOUT_FILENO, "Usage: [server_pid] [message]\n", 30);
 		return (EXIT_FAILURE);
 	}
 	server = atoi(av[1]);

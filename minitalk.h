@@ -29,11 +29,11 @@ void	end_handler(void);
 
 void	ack_handler(void);
 
-void send_len(pid_t server, size_t len);
+void	send_len(pid_t server, size_t len);
 
 void	send_message(pid_t server, char c);
 
-void handler(int signo, siginfo_t *info, void *more_info);
+void	handler(int signo, siginfo_t *info, void *more_info);
 
 char	*handle_len(int signo, int *phase, pid_t client_pid);
 

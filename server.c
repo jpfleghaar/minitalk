@@ -18,7 +18,6 @@ char	*handle_len(int signo, int *phase, pid_t client_pid)
 	static size_t	len;
 	static int		i;
 
-	len = 0;
 	len = (len << 1) | (signo == SIGUSR1 ? 1 : 0);
 	i++;
 	if (32 == i)
@@ -32,6 +31,7 @@ char	*handle_len(int signo, int *phase, pid_t client_pid)
 		i = 0;
 		*phase = 1;
 		str[len] = '\0';
+		len = 0;
 		return (str);
 	}
 	ft_kill(client_pid, SIGUSR1);
